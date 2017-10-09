@@ -97,11 +97,13 @@ int main() {
 	if (s1 != s3) {
 		cout << "s1 != s3" << endl;
 	}
+
 #endif // 0
 
-
-	str s10("abcd", verbose);
-	str s11("abc", verbose);
+	str s10("abb", verbose);
+	str s11("ab", verbose);
+	int x = string_compare(s10, s11);
+	cout << "Diff is " << x << endl;
 
 
   return 0;

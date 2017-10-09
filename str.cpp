@@ -32,6 +32,37 @@ void str::reverse() {
 
 }
 
+int string_compare(const str& lhs, const str& rhs) {
+
+	int indLhs = 0;
+	int indRhs = 0;
+
+	if (lhs._strlen == rhs._strlen) {
+
+		while (lhs._string[indLhs] != '\0' && rhs._string[indRhs] != '\0') {
+
+			if (lhs._string[indLhs] != rhs._string[indRhs]) {
+
+				return (lhs._string[indLhs] - rhs._string[indRhs]);
+
+			}
+
+			indLhs++;
+			indRhs++;
+		}
+
+		return 0;
+	}
+	else {
+
+		return (lhs._strlen - rhs._strlen);
+
+	}
+
+	
+
+
+}
 
 //EOF
 

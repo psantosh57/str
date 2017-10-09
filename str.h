@@ -21,7 +21,8 @@ Declaration of str class
 class str {
 public:
    //WRITE CODE HERE
-	str(char ch, bool verbose):_string(2, verbose), _display(verbose), _strlen(1) {
+
+	str(char ch, bool verbose) :_string(2, verbose), _display(verbose), _strlen(1) {
 
 		if (_display) {
 
@@ -32,6 +33,7 @@ public:
 		_string[1] = '\0';
 
 	}
+
 
 	str(const char* chArray, bool verbose) : _string((strlen(chArray)+1), verbose), _display(verbose), _strlen((strlen(chArray)+1)) {
 
@@ -149,6 +151,8 @@ public:
 	}
 
 	void reverse();
+	int friend string_compare(const str& lhs, const str& rhs);
+
 
 private:
   bool _display;
