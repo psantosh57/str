@@ -35,7 +35,7 @@ public:
 	}
 
 
-	str(const char* chArray, bool verbose) : _string((strlen(chArray)+1), verbose), _display(verbose), _strlen((strlen(chArray)+1)) {
+	str(const char* chArray, bool verbose = false) : _string((strlen(chArray)+1), verbose), _display(verbose), _strlen((strlen(chArray))) {
 
 		if (_display) {
 
@@ -50,6 +50,22 @@ public:
 		}
 
 		_string[index] = '\0';
+
+	}
+
+	str(const darray<char>& s) : _string(s), _strlen(0) {
+
+		if (_display) {
+
+			cout << "In str darray constructor" << endl;
+		}
+
+		int index = 0;
+		while (s[index] != '\0') {
+
+			++_strlen;
+			++index;
+		}
 
 	}
 
@@ -107,6 +123,7 @@ public:
 
 	}
 
+
 	friend bool operator==(const str& lhs, const str& rhs) {
 
 		if (lhs._display) {
@@ -150,7 +167,7 @@ public:
 
 	}
 
-	friend str& operator+(const char ch, const str& rhs) {
+	friend str operator+(const char ch, const str& rhs) {
 
 		str sum(ch, rhs._display);
 		sum._strlen += rhs._strlen;
@@ -163,6 +180,34 @@ public:
 
 		sum._string[index] = '\0';
 		
+		return sum;
+
+	}
+
+	friend str operator+(const str& lhs, const char& ch) {
+
+		str sum(lhs._string);
+		sum._strlen += 1;
+		int index = (sum._strlen - 1);
+		sum._string[index++] = ch;
+		sum._string[index] = '\0';
+		
+		return sum;
+
+	}
+
+	friend str operator+(const str& lhs, const char* ch) {
+
+		str sum(lhs._string);
+		sum._strlen += strlen(ch);
+		//sum._strlen ++;
+		int index = (sum._strlen - strlen(ch));
+		int count = 0;
+		while (ch[count] != '\0') {
+			sum._string[index++] = ch[count++];
+		}
+		sum._string[index] = '\0';
+
 		return sum;
 
 	}

@@ -30,7 +30,6 @@ main
 CANNOT CHANGE ANYTHING IN THIS FILE
 -----------------------------------------------------------------*/
 
-#if 0
 void test1() {
 	const char *j = "jag";
 	cout << "length of j = " << strlen(j) << endl;
@@ -55,6 +54,7 @@ void test1() {
 	str s10("abcd", verbose);
 	str s11("abc", verbose);
 	int x = string_compare(s10, s11);
+	
 	s3 = 'a' + s1;
 	cout << "s1 = " << s1 << endl;
 	cout << "s3 = " << s3 << endl;
@@ -68,14 +68,14 @@ void test1() {
 	s2 = "Claaaa";
 	cout << "Jag " << 'C' + s1 + '+' + '+' + ' ' << s2 << "s" << endl;
 }
-#endif // 0
+
 
 
 /*----------------------------------------------------------------
 main
 -----------------------------------------------------------------*/
 int main() {
-  //test1();
+  test1();
 
 #if 0
 	const char *j = "jag";
@@ -105,15 +105,23 @@ int main() {
 	int x = string_compare(s10, s11);
 	cout << "Diff is " << x << endl;
 
-#endif // 0
 
-	str s2("abc", true);
+
+	str s2("abcd", true);
 	str s3(s2);
 
-	//s3 = 'a' + s2;
-	cout << s3 << endl;
-	cout << s2 << endl;
-	
+	s3 = s2 + 'p';
+
+
+	str s1("abcd", true);
+	str s2("abc", true);
+
+	s1 = "++";
+	s2 = "Claaaa";
+	cout << "Jag " << 'C' + s1 + '+' + '+' + ' ' << s2 << "s" << endl;
+	//cout << s1 + '+' + '+' << endl;
+#endif // 0
+
   return 0;
 }
 
