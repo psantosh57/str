@@ -22,7 +22,7 @@ WRITE CODE IN THIS FILE
 
 void str::reverse() {
 
-	for (int i = 0, j = (_strlen-2); i < j; ++i, --j) {
+	for (int i = 0, j = (_strlen-1); i < j; ++i, --j) {
 
 		char tempCh = _string[i];
 		_string[i] = _string[j];
