@@ -134,11 +134,9 @@ public:
 		if (lhs._strlen == rhs._strlen) {
 
 			int index = 0;
-			//bool equal = true;
 			while(lhs._string[index] != '\0') {
 
 				if (lhs._string[index] != rhs._string[index]) {
-					//equal = false;
 					return false;
 				}
 
@@ -200,7 +198,6 @@ public:
 
 		str sum(lhs._string);
 		sum._strlen += strlen(ch);
-		//sum._strlen ++;
 		int index = (sum._strlen - strlen(ch));
 		int count = 0;
 		while (ch[count] != '\0') {

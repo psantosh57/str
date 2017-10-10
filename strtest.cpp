@@ -77,51 +77,6 @@ main
 int main() {
   test1();
 
-#if 0
-	const char *j = "jag";
-	//cout << "length of j = " << strlen(j) << endl;
-	str s1("pack my box with five dozen liquor jugs", false);
-	str s2("abcd", false);
-	cout << "s1 = " << s1 << endl;
-	cout << "s2 = " << s2 << endl;
-	//s1.reverse();
-	//cout << s1 << endl;
-	str s3(s2);
-	cout << "s3 = " << s3 << endl;
-	s2 = s1;
-	cout << "s2 = " << s2 << endl;
-
-	if (s1 == s2) {
-		cout << "s1 == s2" << endl;
-	}
-	if (s1 != s3) {
-		cout << "s1 != s3" << endl;
-	}
-
-
-
-	str s10("abb", verbose);
-	str s11("ab", verbose);
-	int x = string_compare(s10, s11);
-	cout << "Diff is " << x << endl;
-
-
-
-	str s2("abcd", true);
-	str s3(s2);
-
-	s3 = s2 + 'p';
-
-
-	str s1("abcd", true);
-	str s2("abc", true);
-
-	s1 = "++";
-	s2 = "Claaaa";
-	cout << "Jag " << 'C' + s1 + '+' + '+' + ' ' << s2 << "s" << endl;
-	//cout << s1 + '+' + '+' << endl;
-#endif // 0
-
   return 0;
 }
 

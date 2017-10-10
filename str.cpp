@@ -59,9 +59,6 @@ int string_compare(const str& lhs, const str& rhs) {
 
 	}
 
-	
-
-
 }
 
 //EOF
