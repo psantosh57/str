@@ -53,7 +53,7 @@ public:
 
 	}
 
-	str(const str& s) {
+	str(const str& s) : _string(s._string) {
 
 		if (s._display) {
 
@@ -62,9 +62,9 @@ public:
 
 		_display = s._display;
 		_strlen = s._strlen;
-		_string = s._string;
-
+		
 	}
+
 
 	~str() {
 
@@ -147,6 +147,23 @@ public:
 		}
 
 		return (!(lhs == rhs));
+
+	}
+
+	friend str& operator+(const char ch, const str& rhs) {
+
+		str sum(ch, rhs._display);
+		sum._strlen += rhs._strlen;
+		int index = 1;
+		while (index < sum._strlen) {
+
+			sum._string[index] = rhs._string[index - 1];
+			index++;
+		}
+
+		sum._string[index] = '\0';
+		
+		return sum;
 
 	}
 

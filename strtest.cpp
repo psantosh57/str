@@ -98,14 +98,22 @@ int main() {
 		cout << "s1 != s3" << endl;
 	}
 
-#endif // 0
+
 
 	str s10("abb", verbose);
 	str s11("ab", verbose);
 	int x = string_compare(s10, s11);
 	cout << "Diff is " << x << endl;
 
+#endif // 0
 
+	str s2("abc", true);
+	str s3(s2);
+
+	//s3 = 'a' + s2;
+	cout << s3 << endl;
+	cout << s2 << endl;
+	
   return 0;
 }
 
